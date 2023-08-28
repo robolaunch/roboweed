@@ -4,17 +4,17 @@
     <xacro:include filename="inertial_macros.xacro"/>
 
 
-    <xacro:property name="chassis_length" value="0.4068"/>
-    <xacro:property name="chassis_width" value="0.250"/>
-    <xacro:property name="chassis_height" value="0.24"/>
+    <xacro:property name="chassis_length" value="1.2"/>
+    <xacro:property name="chassis_width" value="1.0"/>
+    <xacro:property name="chassis_height" value="0.17"/>
     <xacro:property name="chassis_mass" value="10.0"/>
-    <xacro:property name="wheel_radius" value="0.066"/>
-    <xacro:property name="wheel_thickness" value="0.020"/>
+    <xacro:property name="wheel_radius" value="0.2"/>
+    <xacro:property name="wheel_thickness" value="0.060"/>
     <xacro:property name="wheel_mass" value="1.0"/>
-    <xacro:property name="wheel_offset_x" value="0.2034"/>
-    <xacro:property name="wheel_offset_y" value="0.1125"/>
-    <xacro:property name="wheel_offset_z" value="0.050"/>
-    <xacro:property name="wheel_seperate_x" value="0.12"/>
+    <xacro:property name="wheel_offset_x" value="0.10"/>
+    <xacro:property name="wheel_offset_y" value="0.55"/>
+    <xacro:property name="wheel_offset_z" value="-0.050"/>
+    <xacro:property name="wheel_seperate_x" value="0.35"/>
     <xacro:property name="caster_wheel_radius" value="0.0175"/>
     <xacro:property name="caster_wheel_mass" value="0.1"/>
     <xacro:property name="caster_wheel_offset_x" value="0.075"/>
@@ -63,31 +63,56 @@
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
-        <origin xyz="${-wheel_offset_x} 0 ${-wheel_offset_z}"/>
+        <origin xyz="0 0 0"/>
     </joint>
 
     <link name="chassis">
         <visual>
-            <origin xyz="${chassis_length/2} 0 ${chassis_height/2}"/>
+            <origin xyz="-0.613255 -0.702 -0.15" rpy="0 0 0" />
             <geometry>
-                <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+                <mesh filename="$(find articubot_one)/description/mesh/body2.STL"/>$
             </geometry>
             <material name="orange"/>
         </visual>
         <collision>
-            <origin xyz="${chassis_length/2} 0 ${chassis_height/2}"/>
+            <origin xyz="0 0 0"/>
             <geometry>
-                <box size="${chassis_length} ${chassis_width} ${chassis_height/5}"/>
+                <box size="1.0 0.5 0.1"/>
             </geometry>
             <material name="orange"/>
         </collision>
         <xacro:inertial_box mass="0.5" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}">
-            <origin xyz="${chassis_length/2} 0 ${chassis_height/2}" rpy="0 0 0"/>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
 
     <gazebo reference="chassis">
         <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <!-- TOP CHASSIS TOP LINK -->
+
+    <joint name="chassis_top_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="chassis_top"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <link name="chassis_top">
+        <visual>
+            <origin xyz="-0.555323 -0.623625 -0.15" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="$(find articubot_one)/description/mesh/body1.STL"/>$
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <xacro:inertial_box mass="0.5" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <gazebo reference="chassis_top">
+        <material>Gazebo/red</material>
     </gazebo>
 
     <!-- FRONT LEFT WHEEL LINK -->

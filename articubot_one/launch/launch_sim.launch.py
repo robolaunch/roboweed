@@ -43,7 +43,7 @@ def generate_launch_description():
     gazebo_params_file = os.path.join(get_package_share_directory(package_name),'config','gazebo_params.yaml')
 
     world_path = PathJoinSubstitution(
-        [FindPackageShare("articubot_one"), "worlds", "none"]
+        [FindPackageShare("articubot_one"), "worlds","ready_world","worlds","farmWith1CropRow.world"]
     )
 
     # Include the Gazebo launch file, provided by the gazebo_ros package
@@ -59,7 +59,7 @@ def generate_launch_description():
                                    '-entity', 'my_bot',
                                    '-x', '0.0',
                                    '-y', '0.0',
-                                   '-z', '0.0',
+                                   '-z', '1.0',
                                    '-Y', '0.0'],
                         output='screen')
 

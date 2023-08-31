@@ -1,40 +1,91 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
-
-    <joint name="camera_joint" type="fixed">
+    
+<!-- FRONT DEPTH CAMERA  -->
+    <joint name="front_depth_camera_joint" type="fixed">
         <parent link="chassis"/>
-        <child link="camera_link"/>
-        <origin xyz="0.305 0 0.08" rpy="0 0 0"/>
+        <child link="front_depth_camera"/>
+        <origin xyz="0.625 0 0.43" rpy="0 0.96 0"/>
     </joint>
 
-    <link name="camera_link">
+    <link name="front_depth_camera">
         <visual>
             <geometry>
-                <box size="0.010 0.03 0.03"/>
+                <box size="0.010 0.06 0.03"/>
             </geometry>
             <material name="red"/>
         </visual>
     </link>
 
-
-    <joint name="camera_optical_joint" type="fixed">
-        <parent link="camera_link"/>
-        <child link="camera_link_optical"/>
+    <joint name="front_depth_camera_optical_joint" type="fixed">
+        <parent link="front_depth_camera"/>
+        <child link="front_depth_camera_optical"/>
         <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
     </joint>
 
-    <link name="camera_link_optical"></link>
+    <link name="front_depth_camera_optical"></link>
 
 
-
-    <gazebo reference="camera_link">
+    <gazebo reference="front_depth_camera">
         <material>Gazebo/Red</material>
 
-        <sensor name="camera" type="depth">
+        <sensor name="front_depth_camera" type="depth">
             <pose> 0 0 0 0 0 0 </pose>
             <visualize>true</visualize>
             <update_rate>10</update_rate>
-            <camera>
+            <front_depth_camera>
+                <horizontal_fov>0.8</horizontal_fov>
+                <image>
+                    <format>B8G8R8</format>
+                    <width>640</width>
+                    <height>480</height>
+                </image>
+                <clip>
+                    <near>0.05</near>
+                    <far>8.0</far>
+                </clip>
+            </front_depth_camera>
+            <plugin name="front_depth_camera_controller" filename="libgazebo_ros_camera.so">
+                <frame_name>front_depth_camera_optical</frame_name>
+                <min_depth>0.1</min_depth>
+                <max_depth>100.0</max_depth>
+            </plugin>
+        </sensor>
+    </gazebo>
+
+<!-- REAR DEPTH CAMERA  -->
+    <joint name="rear_depth_camera_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="rear_depth_camera"/>
+        <origin xyz="-0.645 0 0.43" rpy="0 0.4 ${pi}"/>
+    </joint>
+
+    <link name="rear_depth_camera">
+        <visual>
+            <geometry>
+                <box size="0.010 0.06 0.03"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+    </link>
+
+    <joint name="rear_depth_camera_optical_joint" type="fixed">
+        <parent link="rear_depth_camera"/>
+        <child link="rear_depth_camera_optical"/>
+        <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+    </joint>
+
+    <link name="rear_depth_camera_optical"></link>
+
+
+    <gazebo reference="rear_depth_camera">
+        <material>Gazebo/Red</material>
+
+        <sensor name="rear_depth_camera" type="depth">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+            <rear_depth_camera>
                 <horizontal_fov>1.089</horizontal_fov>
                 <image>
                     <format>B8G8R8</format>
@@ -45,13 +96,15 @@
                     <near>0.05</near>
                     <far>8.0</far>
                 </clip>
-            </camera>
-            <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-                <frame_name>camera_link_optical</frame_name>
+            </rear_depth_camera>
+            <plugin name="rear_depth_camera_controller" filename="libgazebo_ros_camera.so">
+            
+                <frame_name>rear_depth_camera_optical</frame_name>
                 <min_depth>0.1</min_depth>
                 <max_depth>100.0</max_depth>
             </plugin>
         </sensor>
     </gazebo>
+
 
 </robot>

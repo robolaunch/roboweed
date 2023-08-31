@@ -6,15 +6,15 @@
 
     <xacro:property name="chassis_length" value="1.2"/>
     <xacro:property name="chassis_width" value="1.0"/>
-    <xacro:property name="chassis_height" value="0.17"/>
+    <xacro:property name="chassis_height" value="0.01"/>
     <xacro:property name="chassis_mass" value="10.0"/>
     <xacro:property name="wheel_radius" value="0.2"/>
     <xacro:property name="wheel_thickness" value="0.060"/>
     <xacro:property name="wheel_mass" value="1.0"/>
     <xacro:property name="wheel_offset_x" value="0.10"/>
-    <xacro:property name="wheel_offset_y" value="0.55"/>
+    <xacro:property name="wheel_offset_y" value="0.535"/>
     <xacro:property name="wheel_offset_z" value="-0.050"/>
-    <xacro:property name="wheel_seperate_x" value="0.35"/>
+    <xacro:property name="wheel_seperate_x" value="0.325"/>
     <xacro:property name="caster_wheel_radius" value="0.0175"/>
     <xacro:property name="caster_wheel_mass" value="0.1"/>
     <xacro:property name="caster_wheel_offset_x" value="0.075"/>
@@ -68,9 +68,9 @@
 
     <link name="chassis">
         <visual>
-            <origin xyz="-0.613255 -0.702 -0.15" rpy="0 0 0" />
+            <origin xyz="0 0 -0.075" rpy="0 0 0" />
             <geometry>
-                <mesh filename="$(find articubot_one)/description/mesh/body2.STL"/>$
+                <mesh filename="$(find articubot_one)/description/mesh/blender_top.stl"/>$
             </geometry>
             <material name="orange"/>
         </visual>
@@ -95,26 +95,32 @@
     <joint name="chassis_top_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis_top"/>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0"/>
     </joint>
 
     <link name="chassis_top">
         <visual>
-            <origin xyz="-0.555323 -0.623625 -0.15" rpy="0 0 0"/>
+            <origin xyz="0 0 -0.075" rpy="0 0 0" />
             <geometry>
-                <mesh filename="$(find articubot_one)/description/mesh/body1.STL"/>$
+                <mesh filename="$(find articubot_one)/description/mesh/blender_body.stl"/>$
             </geometry>
             <material name="red"/>
         </visual>
+        <collision>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <box size="1.0 0.5 0.1"/>
+            </geometry>
+            <material name="red"/>
+        </collision>
         <xacro:inertial_box mass="0.5" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
 
     <gazebo reference="chassis_top">
-        <material>Gazebo/red</material>
+        <material>Gazebo/Red</material>
     </gazebo>
-
     <!-- FRONT LEFT WHEEL LINK -->
 
     <joint name="front_left_wheel_joint" type="continuous">
@@ -128,8 +134,9 @@
 
     <link name="front_left_wheel">
         <visual>
+            <origin xyz="0 0 0" rpy="0 ${pi} 0" />
             <geometry>
-                <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
+                <mesh filename="$(find articubot_one)/description/mesh/blender_wheel.stl"/>$
             </geometry>
             <material name="blue"/>
         </visual>
@@ -162,8 +169,9 @@
 
     <link name="rear_left_wheel">
         <visual>
+            <origin xyz="0 0 0" rpy="0 ${pi} 0" />
             <geometry>
-                <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
+                <mesh filename="$(find articubot_one)/description/mesh/blender_wheel.stl"/>$
             </geometry>
             <material name="blue"/>
         </visual>
@@ -198,8 +206,9 @@
 
     <link name="front_right_wheel">
         <visual>
+            <origin xyz="0 0 0" rpy="0 ${pi} 0" />
             <geometry>
-                <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
+                <mesh filename="$(find articubot_one)/description/mesh/blender_wheel.stl"/>$
             </geometry>
             <material name="blue"/>
         </visual>
@@ -231,8 +240,9 @@
 
     <link name="rear_right_wheel">
         <visual>
+            <origin xyz="0 0 0" rpy="0 ${pi} 0" />
             <geometry>
-                <cylinder radius="${wheel_radius}" length="${wheel_thickness}"/>
+                <mesh filename="$(find articubot_one)/description/mesh/blender_wheel.stl"/>$
             </geometry>
             <material name="blue"/>
         </visual>

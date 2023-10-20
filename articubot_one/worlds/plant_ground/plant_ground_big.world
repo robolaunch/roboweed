@@ -73,7 +73,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -673,7 +673,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -689,7 +689,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -705,7 +705,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -721,7 +721,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -737,7 +737,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -753,7 +753,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -769,7 +769,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -785,7 +785,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -801,7 +801,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -817,7 +817,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -833,7 +833,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -849,7 +849,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -865,7 +865,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -881,7 +881,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/ideapad/Documents/plant_ground.dae</uri>
+              <uri>file:///home/ideapad/develop/roboweed_ws/src/articubot_one/worlds/plant_ground/plant_ground.dae</uri>
             </mesh>
           </geometry>
         </visual>

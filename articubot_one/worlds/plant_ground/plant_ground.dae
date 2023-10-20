@@ -106,7 +106,7 @@
   </library_effects>
   <library_images>
     <image id="plant_ground_mert_png" name="plant_ground_mert_png">
-      <init_from>plant_ground_mert.png</init_from>
+      <init_from>plant_ground.png</init_from>
     </image>
   </library_images>
   <library_materials>
